@@ -23,7 +23,7 @@ $router->get('foo', 'ExampleController@fooExample');
 
 $router->post('bar', 'ExampleController@barExample');
 
-$router->get('user/{id}', 'ExampleController@userExample');
+$router->get('user/{id}', ['as' => 'user', 'uses' => 'ExampleController@userExample']);
 
 $router->get('post/{postId}/comment/{commentId}', function ($postId, $commentId) {
 	return 'Post dengan id : ' . $postId . ' dan comment dengan id : ' . $commentId;
