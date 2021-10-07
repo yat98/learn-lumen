@@ -46,3 +46,17 @@ $router->get('optional[/{param}]', function ($param = null) {
 $router->get('profile', ['as' => 'route.profile', function () {
 	return route('route.profile');
 }]);
+
+$router->group(['prefix' => 'admin', 'middleware' => 'age'], function ($router) {
+	$router->get('home', function () {
+		return 'Home Admin, Old enough';
+	});
+
+	$router->get('profile', function () {
+		return 'Profile admin';
+	});
+});
+
+$router->get('fail', ['as' => 'fail', function () {
+	return 'Not yet mature';
+}]);
