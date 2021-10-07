@@ -27,6 +27,18 @@ $router->get('foo', function () {
 	return 'Hello, GET method';
 });
 
-$router->post('bar',function(){
-    return 'Hello, POST method';
+$router->post('bar', function () {
+	return 'Hello, POST method';
+});
+
+$router->get('user/{id}', function ($id) {
+	return 'User dengan id : ' . $id;
+});
+
+$router->get('post/{postId}/comment/{commentId}', function ($postId, $commentId) {
+	return 'Post dengan id : ' . $postId . ' dan comment dengan id : ' . $commentId;
+});
+
+$router->get('optional[/{param}]', function ($param = null) {
+	return $param;
 });
