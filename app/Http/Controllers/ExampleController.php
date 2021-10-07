@@ -27,4 +27,9 @@ class ExampleController extends Controller
 	{
 		return 'Hello, POST method';
 	}
+
+	public function userExample($id)
+	{
+		return 'User dengan id : ' . $id;
+	}
 }
