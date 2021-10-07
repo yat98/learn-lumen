@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Support\Str;
-
 // @var \Laravel\Lumen\Routing\Router $router
 
 /*
@@ -19,17 +17,11 @@ $router->get('/', function () use ($router) {
 	return $router->app->version();
 });
 
-$router->get('key', function () {
-	return Str::random(32);
-});
+$router->get('key', 'ExampleController@generateKey');
 
-$router->get('foo', function () {
-	return 'Hello, GET method';
-});
+$router->get('foo', 'ExampleController@fooExample');
 
-$router->post('bar', function () {
-	return 'Hello, POST method';
-});
+$router->post('bar', 'ExampleController@barExample');
 
 $router->get('user/{id}', function ($id) {
 	return 'User dengan id : ' . $id;
