@@ -42,3 +42,7 @@ $router->get('post/{postId}/comment/{commentId}', function ($postId, $commentId)
 $router->get('optional[/{param}]', function ($param = null) {
 	return $param;
 });
+
+$router->get('profile', ['as' => 'route.profile', function () {
+	return route('route.profile');
+}]);
