@@ -54,3 +54,5 @@ $router->get('fail', ['as' => 'fail', function () {
 $router->get('foo/bar', 'ExampleController@fooBar');
 $router->get('bar/foo', 'ExampleController@fooBar');
 $router->post('user/profile', 'ExampleController@userProfile');
+
+$router->get('/response','ExampleController@response');
