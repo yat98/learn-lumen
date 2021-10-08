@@ -50,3 +50,7 @@ $router->group(['prefix' => 'admin', 'middleware' => 'age'], function ($router) 
 $router->get('fail', ['as' => 'fail', function () {
 	return 'Not yet mature';
 }]);
+
+$router->get('foo/bar', 'ExampleController@fooBar');
+$router->get('bar/foo', 'ExampleController@fooBar');
+$router->post('user/profile', 'ExampleController@userProfile');
